@@ -2,9 +2,9 @@ import React from 'react';
 import { Mutation } from '@apollo/client/react/components';
 import { ADD_TODO, GET_USER } from '../constants';
 import TodoTextInput from './todoTextInput';
+import TodoList from './todoList';
 
 function TodoApp({ user }) {
-  console.log(user);
   return (
     <div>
       <section className="todoapp">
@@ -29,6 +29,8 @@ function TodoApp({ user }) {
             )}
           </Mutation>
         </header>
+
+        <TodoList user={user} />
       </section>
     </div>
   );

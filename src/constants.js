@@ -22,3 +22,38 @@ export const ADD_TODO = gql`
         }
     }
 `;
+
+export const CHANGE_TODO_STATUS = gql`
+    mutation ChangeTodoStatus($id: Int!, $complete: Boolean) {
+        changeTodoStatus(id: $id, complete: $complete) {
+            id
+            complete
+        }
+    }
+`;
+
+export const RENAME_TODO = gql`
+    mutation RenameTodo($id: Int!, $text: String) {
+        renameTodo(id: $id, text: $text) {
+            id
+            text
+        }
+    }
+`;
+
+export const REMOVE_TODO = gql`
+    mutation RemoveTodo($id: Int!) {
+        removeTodo(id: $id) {
+            id
+        }
+    }
+`;
+
+export const MARK_ALL_TODOS = gql`
+    mutation MarkAllTodos {
+        markAllTodos {
+            id
+            complete
+        }
+    }
+`;
