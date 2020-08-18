@@ -14,5 +14,8 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "no-plusplus": "off",
+    "no-console": "off"
+  }
 }

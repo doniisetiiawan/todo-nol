@@ -1,10 +1,17 @@
 {
   "name": "todo-nol",
   "version": "1.0.0",
-  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./server.js",
+    "lint": "eslint ./ --cache"
+  },
   "author": "Doni Setiawan <donisetiawan.050@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -12,9 +19,12 @@
     "eslint-plugin-jsx-a11y": "^6.3.0",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4",
+    "nodemon": "^2.0.4",
     "prettier": "^2.0.5"
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
     "graphql": "^15.3.0"
   }
 }
