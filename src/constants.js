@@ -57,3 +57,11 @@ export const MARK_ALL_TODOS = gql`
         }
     }
 `;
+
+export const REMOVE_COMPLETED_TODOS = gql`
+    mutation RemoveCompletedTodos {
+        removeCompletedTodos {
+            id
+        }
+    }
+`;

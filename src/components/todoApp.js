@@ -3,8 +3,11 @@ import { Mutation } from '@apollo/client/react/components';
 import { ADD_TODO, GET_USER } from '../constants';
 import TodoTextInput from './todoTextInput';
 import TodoList from './todoList';
+import TodoListFooter from './todoListFooter';
 
 function TodoApp({ user }) {
+  const hasTodos = user.totalCount > 0;
+
   return (
     <div>
       <section className="todoapp">
@@ -31,6 +34,7 @@ function TodoApp({ user }) {
         </header>
 
         <TodoList user={user} />
+        {hasTodos && <TodoListFooter user={user} />}
       </section>
     </div>
   );
