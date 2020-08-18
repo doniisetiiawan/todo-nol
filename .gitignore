@@ -71,3 +71,5 @@ package-lock.json
 RNTester/build
 yarn.lock
 .expo/
+
+src/a.js

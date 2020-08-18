@@ -16,6 +16,8 @@
   "plugins": ["react"],
   "rules": {
     "no-plusplus": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "react/jsx-filename-extension": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }

@@ -1,14 +1,41 @@
 import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
 import path from 'path';
+import webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
 import schema from './data/schema';
 import resolvers from './data/resolvers';
 
-const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+const compiler = webpack({
+  mode: 'development',
+  devtool: 'eval-source-map',
+  entry: [
+    'whatwg-fetch',
+    path.resolve(__dirname, 'src', 'app.js'),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
+  },
+  output: {
+    filename: 'app.js',
+    path: '/',
+  },
+});
+
+const app = new WebpackDevServer(compiler, {
+  contentBase: '/public/',
+  publicPath: '/src/',
+  stats: { colors: true },
 });
 
 app.use(
