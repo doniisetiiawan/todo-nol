@@ -14,3 +14,11 @@ export const GET_USER = gql`
         }
     }
 `;
+
+export const ADD_TODO = gql`
+    mutation AddTodo($text: String) {
+        addTodo(text: $text) {
+            id
+        }
+    }
+`;
